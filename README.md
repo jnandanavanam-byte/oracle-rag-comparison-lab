@@ -148,7 +148,9 @@ Section-Based Chunking preserves business context while remaining significantly 
 
 This approach provides a meaningful comparison between two Retrieval-Augmented Generation (RAG) strategies while remaining practical for a wide range of hardware configurations.
 
-## Initial Findings
+## Example Evaluation Results
+
+> Results shown below were generated using a specific Oracle ERP documentation dataset. Actual results will vary depending on document volume, structure, and content characteristics.
 
 ### Document Loading
 
@@ -166,9 +168,22 @@ This approach provides a meaningful comparison between two Retrieval-Augmented G
 | Maximum Chunk Length | 1000 |
 | Minimum Chunk Length | 1 |
 
+### Section-Based Chunking
+
+| Metric | Value |
+|---------|---------|
+| Chunks Generated | 880 |
+| Average Chunk Length | 2830 |
+| Maximum Chunk Length | 5066 |
+| Minimum Chunk Length | 904 |
+
 ### Observations
 
-The minimum-length chunks corresponded to Roman numeral pages found in Oracle documentation:
+Recursive Chunking produced a larger number of smaller chunks, enabling more granular retrieval.
+
+Section-Based Chunking produced fewer but significantly larger chunks, preserving more Oracle ERP business context and procedural information.
+
+The minimum-length Recursive chunks corresponded to Roman numeral pages found in Oracle documentation:
 
 - x
 - xii
@@ -221,15 +236,6 @@ The project is designed to run on CPU-only environments.
 
 GPU acceleration is optional.
 
-Supported environments:
-
-| Environment | Supported |
-|------------|------------|
-| CPU Only | ✅ |
-| NVIDIA CUDA GPU | ✅ |
-| Enterprise Workstation | ✅ |
-| Development Laptop | ✅ |
-
 ### Optional GPU Acceleration
 
 The project automatically detects available hardware.
@@ -241,9 +247,26 @@ The project automatically detects available hardware.
 | Development Laptop | ✅ |
 | Enterprise Workstation | ✅ |
 
-GPU acceleration is optional and is automatically enabled when a CUDA-compatible NVIDIA GPU is available.
+GPU acceleration is optional and automatically enabled when a CUDA-compatible NVIDIA GPU is available.
 
 No GPU is required to run this project.
+
+## Notebook Walkthrough
+
+| Notebook | Purpose |
+|-----------|-----------|
+| 01_Document_Loading.ipynb | Load and validate Oracle ERP documents |
+| 02_Recursive_Chunking.ipynb | Implement Recursive Character Chunking |
+| 03_Semantic_Chunking.ipynb | Archived Semantic Chunking evaluation |
+| 03_Section_Based_Chunking.ipynb | Implement Section-Based Chunking |
+| 04_Chunking_Comparison.ipynb | Compare Recursive and Section-Based Chunking |
+| 05_MiniLM_Embeddings.ipynb | Generate MiniLM embeddings |
+| 06_BGEM3_Embeddings.ipynb | Generate BGE-M3 embeddings |
+| 07_Chroma_Indexing.ipynb | Build ChromaDB vector store |
+| 08_FAISS_Indexing.ipynb | Build FAISS vector store |
+| 09_Retrieval_Comparison.ipynb | Compare retrieval quality |
+| 10_Qwen_Inference.ipynb | Generate responses using Qwen3:14B |
+| 11_End_To_End_Comparison.ipynb | Compare both RAG pipelines end-to-end |
 
 ## Installation
 
@@ -265,6 +288,24 @@ python -m venv .venv
 
 ```bash
 pip install -r requirements.txt
+```
+
+### Verify GPU Support (Optional)
+
+```python
+import torch
+
+print(torch.cuda.is_available())
+
+if torch.cuda.is_available():
+    print(torch.cuda.get_device_name(0))
+```
+
+Expected output on a CUDA-enabled system:
+
+```text
+True
+NVIDIA RTX A5000 Laptop GPU
 ```
 
 ## Future Enhancements

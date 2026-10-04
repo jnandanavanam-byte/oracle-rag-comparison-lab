@@ -24,8 +24,16 @@ sentence-transformers
 langchain-huggingface
 
 # =====================================================
-# Advanced Chunking Strategies
+# Chunking Strategies
 # =====================================================
+# Active:
+# - Recursive Character Chunking
+# - Custom Section-Based Chunking
+#
+# Archived / Reference:
+# - Semantic Chunking Evaluation
+#
+# Retained for 03_Semantic_Chunking.ipynb
 langchain-experimental
 
 # =====================================================
