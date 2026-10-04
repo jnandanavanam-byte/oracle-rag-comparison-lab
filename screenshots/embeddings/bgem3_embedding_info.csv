@@ -1,0 +1,5 @@
+Property,Value
+Model,BAAI/bge-m3
+Dimensions,1024
+Chunk Count,880
+Device,cuda
