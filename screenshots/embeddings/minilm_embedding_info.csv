@@ -1,0 +1,5 @@
+Property,Value
+Model,all-MiniLM-L6-v2
+Dimensions,384
+Chunk Count,3519
+Device,cuda
