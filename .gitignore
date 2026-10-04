@@ -1,0 +1,30 @@
+# Python
+__pycache__/
+*.pyc
+
+# Virtual Environment
+.venv/
+venv/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# VS Code
+.vscode/
+
+# Vector databases
+vectorstores/chroma/
+vectorstores/faiss/
+
+# Large documents
+docs/*.pdf
+docs/*.docx
+docs/*.xlsx
+docs/*.xls
+
+# Environment variables
+.env
+
+# OS Files
+.DS_Store
+Thumbs.db
