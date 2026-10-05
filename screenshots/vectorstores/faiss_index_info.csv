@@ -1,0 +1,7 @@
+Property,Value
+Vector Store,FAISS
+Embedding Model,BGE-M3
+Embedding Dimension,1024
+Chunk Count,880
+Vector Count,880
+Device,cuda
