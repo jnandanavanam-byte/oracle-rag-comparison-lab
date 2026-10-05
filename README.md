@@ -11,8 +11,8 @@ Enterprise RAG Evaluation Framework for Oracle ERP Documentation.
 - Generate Responses using Qwen3:14B
 
 ## Project Status
-
-🚧 Development In Progress
+ 
+✅ Core Implementation Complete
 
 ## Planned Pipelines
 
@@ -265,8 +265,7 @@ No GPU is required to run this project.
 | 07_Chroma_Indexing.ipynb | Build ChromaDB vector store |
 | 08_FAISS_Indexing.ipynb | Build FAISS vector store |
 | 09_Retrieval_Comparison.ipynb | Compare retrieval quality |
-| 10_Qwen_Inference.ipynb | Generate responses using Qwen3:14B |
-| 11_End_To_End_Comparison.ipynb | Compare both RAG pipelines end-to-end |
+| 10_Qwen_Inference.ipynb | Compare Qwen3:14B answers generated from both retrieval pipelines |
 
 ## Installation
 
@@ -310,13 +309,5 @@ NVIDIA RTX A5000 Laptop GPU
 
 ## Future Enhancements
 
-- [ ] Parent Child Chunking
-- [ ] Hybrid Search
-- [ ] BM25 Retrieval
-- [ ] Cross Encoder Reranking
-- [ ] GPU Acceleration Benchmarking
-- [ ] Vision RAG
-- [ ] Oracle ERP Knowledge Assistant
 - [ ] Streamlit User Interface
-- [ ] Oracle Workflow Visualization
-- [ ] Retrieval Evaluation Dashboard
+- [ ] Interactive Oracle ERP Assistant
