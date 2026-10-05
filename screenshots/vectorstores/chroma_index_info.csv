@@ -1,0 +1,6 @@
+Property,Value
+Vector Store,ChromaDB
+Embedding Model,MiniLM
+Embedding Dimension,384
+Chunk Count,3519
+Device,cuda
