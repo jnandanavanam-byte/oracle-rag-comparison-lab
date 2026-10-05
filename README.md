@@ -4,7 +4,7 @@ Enterprise RAG Evaluation Framework for Oracle ERP Documentation.
 
 ## Architecture
  
-![Oracle RAG Architecture](diagrams/oracle_rag)
+![Oracle RAG Architecture](diagrams/gitdiagram.png)
  
 The project evaluates two end-to-end Retrieval-Augmented Generation (RAG) pipelines for Oracle ERP documentation.
  
