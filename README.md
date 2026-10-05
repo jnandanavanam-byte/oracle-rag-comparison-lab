@@ -2,6 +2,27 @@
 
 Enterprise RAG Evaluation Framework for Oracle ERP Documentation.
 
+## Architecture
+ 
+![Oracle RAG Architecture](diagrams/oracle_rag)
+ 
+The project evaluates two end-to-end Retrieval-Augmented Generation (RAG) pipelines for Oracle ERP documentation.
+ 
+### Pipeline 1
+ 
+- Recursive Character Chunking
+- MiniLM Embeddings
+- ChromaDB
+- Qwen3:14B
+ 
+### Pipeline 2
+ 
+- Section-Based Chunking
+- BGE-M3 Embeddings
+- Native FAISS
+- Qwen3:14B
+
+
 ## Objectives
 
 - Load Oracle Manuals (PDF, DOCX, XLSX)
